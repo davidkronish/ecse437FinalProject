@@ -2,7 +2,7 @@ run:
 	python3 main.py
 
 test:
-	py.test tests
+	python3 -m test/unittest
 
 setup: requirements.txt
 	pip install -r requirements.txt
