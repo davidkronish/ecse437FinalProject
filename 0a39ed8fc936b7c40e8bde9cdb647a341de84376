@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d900f98_b8bed580",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020570
+      },
+      "writtenOn": "2022-11-30T03:46:52Z",
+      "side": 1,
+      "message": "use github branches instead to merge",
+      "revId": "0a39ed8fc936b7c40e8bde9cdb647a341de84376",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
