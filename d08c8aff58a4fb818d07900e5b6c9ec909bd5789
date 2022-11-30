@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6f4bed4_ba961384",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019509
+      },
+      "writtenOn": "2022-11-30T18:00:16Z",
+      "side": 1,
+      "message": "Looks good but remove the str function in the deck class",
+      "revId": "d08c8aff58a4fb818d07900e5b6c9ec909bd5789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6b682bf_a448a7dc",
+        "filename": "Deck.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019509
+      },
+      "writtenOn": "2022-11-30T18:00:16Z",
+      "side": 1,
+      "message": "This was simply used for quick testing, the function can be removed",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 41
+      },
+      "revId": "d08c8aff58a4fb818d07900e5b6c9ec909bd5789",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
