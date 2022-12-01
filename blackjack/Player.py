@@ -1,4 +1,4 @@
-from chips import chips
+from blackjack.chips import chips
 
 class Player(object): 
     def __init__(self,name,chip_amt) -> None:

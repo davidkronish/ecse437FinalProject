@@ -1,6 +1,6 @@
 import sys
 class chips: 
-    def __init__(self, total=100) -> None:
+    def __init__(self, total) -> None:
         self.total = total 
         self.bet = 0
 

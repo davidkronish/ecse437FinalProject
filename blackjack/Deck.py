@@ -1,5 +1,5 @@
 import random
-from card import card
+from blackjack.card import card
 
 class Deck(object): 
     suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
