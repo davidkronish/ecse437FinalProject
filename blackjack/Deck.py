@@ -1,4 +1,5 @@
 import random
+from card import card
 
 class Deck(object): 
     suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -6,11 +7,11 @@ class Deck(object):
     
     def __init__(self) -> None:
         self.deck = []
-        #pick arbitrary number of decks, add them to deck
-        for _ in range(random.randint(3,6)):
+        #use 5 decks add them to total deck
+        for _ in range(5):
             for suit in self.suits:
                 for rank in self.ranks:
-                    self.deck.append(Card(suit,rank))
+                    self.deck.append(card(suit,rank))
                 
     def __str__(self) -> str:
         deck_comp = ''
@@ -24,11 +25,3 @@ class Deck(object):
     def deal(self):
         single_card = self.deck.pop()
         return single_card
-
-class Card:
-    def __init__(self,suit,rank) -> None:
-        self.suit = suit
-        self.rank = rank
-    
-    def __str__(self) -> str:
-        return self.rank+ " of "+self.suit
