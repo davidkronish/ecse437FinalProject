@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d2c981b_41f39284",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020570
+      },
+      "writtenOn": "2022-12-01T22:44:47Z",
+      "side": 1,
+      "message": "import error in main.py and deck.py. don\u0027t submit please",
+      "revId": "4a65c7b1bcffb356d58ea47f002c364413175b6b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
