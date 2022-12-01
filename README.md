@@ -1,6 +1,7 @@
 ECSE 437 Final Project - Blackjack
 
 Jeremy Chow - 260869534
+
 David Kronish - 260111111
 
 Tools Used:
