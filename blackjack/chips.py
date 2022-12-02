@@ -1,4 +1,3 @@
-import sys
 class chips: 
     def __init__(self, total) -> None:
         self.total = total 
