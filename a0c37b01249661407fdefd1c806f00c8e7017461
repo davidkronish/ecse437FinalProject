@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd5b6675_293fa132",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019509
+      },
+      "writtenOn": "2022-12-03T00:08:18Z",
+      "side": 1,
+      "message": "Code was reviewed, structure changed to abides by python requirements and new pyinstaller package",
+      "revId": "a0c37b01249661407fdefd1c806f00c8e7017461",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
