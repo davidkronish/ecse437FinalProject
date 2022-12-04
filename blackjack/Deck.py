@@ -14,6 +14,7 @@ class Deck(object):
                     self.deck.append(card(suit,rank))
                 
     def __str__(self) -> str:
+        """ For testing purposes """
         deck_comp = ''
         for card in self.deck:
             deck_comp += '\n' + card.__str__()
