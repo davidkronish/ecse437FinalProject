@@ -1,5 +1,3 @@
-from hashlib import new
-import sys, os
 from blackjack.Player import Player
 from blackjack.Deck import Deck
 from blackjack.Hand import Hand
@@ -81,9 +79,16 @@ def main():
         if p.chips.total <= 0 and new_game[0].lower() == 'y':
             print("It seems that you have ran out of chips. If you'd like to play again you need to buy more chips.")
             new_chips = input_chips()
+            if new_chips == 0:
+                print("Thanks for playing! The game session has ended. ")
+                break
             p.chips.total = new_chips
         if new_game[0].lower() == 'y':
             continue
         else: 
             print("Thanks for playing! The game session has ended. ")
             break
+
+
+if __name__ == "__main__":
+    main()

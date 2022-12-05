@@ -12,3 +12,16 @@ Tools Used:
 	Build System: Make
 	Static Code Analysis: Pylint
 	CI: Github Actions
+
+
+
+
+#Running the code
+
+source env/bin/activate 
+
+make sure to download python 
+
+enter dir and run python -m pip install -r requirements.txt
+
+
