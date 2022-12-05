@@ -1,7 +1,7 @@
 from cgi import test
 from importlib.util import find_spec
 import pytest
-
+import io
 from blackjack.Hand import Hand
 from blackjack.chips import chips
 from blackjack.card import card
@@ -106,6 +106,54 @@ def test_player_wins_blackjack():
     assert p.chips.total == 1000
     p.chips.win_blackjack()
     assert p.chips.total == 1075
+
+
+#game scenario unit tests
+def test_input_chips_valid(monkeypatch):
+    monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
+    try:
+        in_chips = input_chips()
+    except Exception as exc:
+        assert False, f" Proper Input shouldn't create an exception. review test "
+
+def test_input_chips_valid(monkeypatch):
+    monkeypatch.setattr('sys.stdin', io.StringIO('gggg'))
+    with pytest.raises(Exception) as exc_info:
+        in_chips = input_chips()
+    assert exc_info.value.args[0] == "Invalid Entry. Please provide an integer as the numher of chips you'd like to buy."
+
+    
+def test_take_bet_valid(monkeypatch):
+    monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
+    try:
+        p = Player('test player',1000)
+        bet = take_bet(p.chips)
+    except Exception as exc:
+        assert False, f" Proper Input shouldn't create an exception. review test "
+
+# def test_take_bet_not_enough_chips(monkeypatch):
+#     monkeypatch.setattr('sys.stdin', io.StringIO('gggg'))
+#     with pytest.raises(Exception) as exc_info:
+#         p = Player('test player',50)
+#         bet = take_bet(p.chips)
+#     assert exc_info.value.args[0] == "Invalid Entry. Please provide an integer as the numher of chips you'd like to buy."
+
+
+
+def test_take_bet():
+    pass
+
+def test_double_option():
+    pass
+
+def test_hit():
+    pass
+
+def test_show_some():
+    pass
+
+def test_show_all():
+    pass
 
 
 #integration tests 
