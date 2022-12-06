@@ -27,8 +27,6 @@ jobs:
     - name: Install dependencies
       run: make setup
 
-    - name: Lint with Pylint
-      run: make lint
 
     - name: Test with Pytest
       run: make runtest
