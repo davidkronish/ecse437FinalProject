@@ -10,7 +10,7 @@ build: setup
 setup: requirements.txt
 	python -m pip install -r requirements.txt
 lint:
-	pylint blackjack
+	pylint --disable=C,R blackjack
 clean:
 	rm -rf __pycache__
 

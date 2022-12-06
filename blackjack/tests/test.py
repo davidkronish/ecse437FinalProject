@@ -17,6 +17,7 @@ def test_card_invalid():
     assert exc_info.value.args[0] == "The suit or rank is not valid entry."
 
 def test_card_valid():
+    c = ""
     try: 
         c = card('Hearts', 'Five')
     except Exception as exc:
@@ -121,7 +122,7 @@ def test_take_bet_valid(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
     try:
         p = Player('test player',1000)
-        bet = take_bet(p.chips)
+        take_bet(p.chips)
     except Exception as exc:
         assert False, f" Proper Input shouldn't create an exception. review test "
 
