@@ -25,10 +25,10 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: |
-	make setup
+	      make setup
     - name: Lint with pylint
       run: |
-	make lint
+	      make lint
     - name: Test with Pytest
       run: |
-	make runtest
+	      make runtest
