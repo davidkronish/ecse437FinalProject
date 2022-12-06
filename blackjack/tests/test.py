@@ -113,16 +113,10 @@ def test_input_chips_valid(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
     try:
         in_chips = input_chips()
+        assert in_chips == 1000
     except Exception as exc:
         assert False, f" Proper Input shouldn't create an exception. review test "
 
-def test_input_chips_valid(monkeypatch):
-    monkeypatch.setattr('sys.stdin', io.StringIO('gggg'))
-    with pytest.raises(Exception) as exc_info:
-        in_chips = input_chips()
-    assert exc_info.value.args[0] == "Invalid Entry. Please provide an integer as the numher of chips you'd like to buy."
-
-    
 def test_take_bet_valid(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
     try:
@@ -131,29 +125,42 @@ def test_take_bet_valid(monkeypatch):
     except Exception as exc:
         assert False, f" Proper Input shouldn't create an exception. review test "
 
-# def test_take_bet_not_enough_chips(monkeypatch):
-#     monkeypatch.setattr('sys.stdin', io.StringIO('gggg'))
-#     with pytest.raises(Exception) as exc_info:
-#         p = Player('test player',50)
-#         bet = take_bet(p.chips)
-#     assert exc_info.value.args[0] == "Invalid Entry. Please provide an integer as the numher of chips you'd like to buy."
-
-
-
-def test_take_bet():
-    pass
-
-def test_double_option():
-    pass
+def test_double_option(monkeypatch):
+    p = Player("Test Player", 1000)
+    p.chips.bet = 500
+    monkeypatch.setattr('sys.stdin', io.StringIO('y'))
+    double_option(p.chips)
+    assert(p.chips.bet == 1000)
 
 def test_hit():
-    pass
+    deck = Deck()
+    player_hand = Hand()
+    player_hand.add_card(card('Hearts', 'Two'))
+    player_hand.add_card(card('Diamonds', 'Two'))
+    assert(player_hand.value == 4)
+    assert(deck.deck[-1].suit == 'Clubs')
+    assert(deck.deck[-1].rank == 'Ace')
+    
+    hit(deck, player_hand)
+    assert(player_hand.value == 15)
 
-def test_show_some():
-    pass
 
-def test_show_all():
-    pass
+
 
 
 #integration tests 
+
+def test_integration_hand_deck(monkeypatch):
+
+    p = Player("Test Player", 1000)
+    deck = Deck()
+    player_hand = Hand()
+    player_hand.add_card(deck.deal())
+    player_hand.add_card(deck.deal())
+
+    old_value = player_hand.value
+
+    single_card = deck.deal()
+    player_hand.add_card(single_card)
+
+    assert(old_value != player_hand.value)
