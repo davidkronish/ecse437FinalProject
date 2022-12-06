@@ -1,7 +1,7 @@
 from cgi import test
 from importlib.util import find_spec
 import pytest
-import io
+from io import StringIO
 from blackjack.Hand import Hand
 from blackjack.chips import chips
 from blackjack.card import card
@@ -111,7 +111,7 @@ def test_player_wins_blackjack():
 
 #game scenario unit tests
 def test_input_chips_valid(monkeypatch):
-    monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
+    monkeypatch.setattr('sys.stdin', StringIO('1000'))
     try:
         in_chips = input_chips()
         assert in_chips == 1000
@@ -119,7 +119,7 @@ def test_input_chips_valid(monkeypatch):
         assert False, f" Proper Input shouldn't create an exception. review test "
 
 def test_take_bet_valid(monkeypatch):
-    monkeypatch.setattr('sys.stdin', io.StringIO('1000'))
+    monkeypatch.setattr('sys.stdin', StringIO('1000'))
     try:
         p = Player('test player',1000)
         take_bet(p.chips)
@@ -129,7 +129,7 @@ def test_take_bet_valid(monkeypatch):
 def test_double_option(monkeypatch):
     p = Player("Test Player", 1000)
     p.chips.bet = 500
-    monkeypatch.setattr('sys.stdin', io.StringIO('y'))
+    monkeypatch.setattr('sys.stdin', StringIO('y'))
     double_option(p.chips)
     assert(p.chips.bet == 1000)
 
