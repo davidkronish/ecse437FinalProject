@@ -8,9 +8,9 @@ build: setup
 	pyinstaller blackjack/main.py
 
 setup: requirements.txt
-	python -m pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 lint:
-	pylint --disable=C,R blackjack
+	python3 -m pylint --disable=C,R blackjack
 clean:
 	rm -rf __pycache__
 
